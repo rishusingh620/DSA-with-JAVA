@@ -1,0 +1,40 @@
+public class SortingOfNegitiv_PositiveArray {
+
+
+    static void display(int []arr){
+
+        for(int val:arr){
+            System.out.println(val+" ");
+        }
+        System.out.println();
+    }
+
+    static void  partion(int []arr){
+
+        int n=arr.length;
+        int l=0;
+        int r=n-1;
+
+        while(l<r){
+            while(arr[l]>=0) l++;
+            while(arr[r]<0) r--;
+
+            if(l<r){
+
+                int temp=arr[l];
+                arr[l]=arr[r];
+                arr[r]= temp;
+            }
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        int [] arr= {-3,-5,6,-9,7,4,-2};
+        partion(arr);
+        display(arr);
+    }
+
+}

@@ -1,0 +1,33 @@
+public class BinarySearch {
+
+    static boolean binarySearch(int[] arr, int target) {
+
+        int st = 0, end = arr.length - 1;
+
+        while (st <= end) {
+
+            //int mid=(st+end)/2;   -old approch
+            // better approch for mid
+            int  mid= st+(end-st)/2; // new approch
+
+            if (target == arr[mid]) {
+                return true;
+            } else if (target < arr[mid]) {
+                end = mid - 1;
+            } else {
+                st = mid + 1;
+            }
+        }
+            return false;
+        }
+
+        public static void main (String[]args) {
+
+            int[] arr = {1, 4, 6, 8, 9, 10, 56, 3, 76, 87};
+            int target = 0;
+            while (target != 100) {
+                System.out.printf("%d exits in arr: %b \n", target,binarySearch( arr, target));
+                target++;
+            }
+        }
+    }
