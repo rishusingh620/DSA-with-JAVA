@@ -1,0 +1,27 @@
+public class SquareRoot_BinarySearch {
+
+    static long SquareRoot(int x){
+
+        long st=0,end=x;
+        long ans=-1;
+               while (st<=end) {
+                   long mid = st + (end - st) / 2;
+                   long val = mid * mid;
+                   if (val == x) {
+                       return mid;
+                   } else if (val < x) {
+                       ans = mid;
+                       st = mid + 1;
+                   } else {
+                       end = mid - 1;
+                   }
+               }
+              return ans;
+    }
+
+    public static void main(String[] args) {
+                int x=145;
+
+        System.out.println(SquareRoot(x));
+    }
+}
