@@ -1,0 +1,11 @@
+package Stringss;
+
+public class interning {
+
+    public static void main(String[] args) {
+        String s = "hello";
+        String x = "hello";
+        x = "mello";
+        System.out.println(x);
+    }
+}
